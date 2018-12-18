@@ -32,8 +32,6 @@ public class Pickable : MonoBehaviour {
 
     private void Update()
     {
-        gameObject.transform.Rotate(0, 5 * rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime);
-
         if (picked)
         {
             Debug.Log("You have collected some more arrows!");

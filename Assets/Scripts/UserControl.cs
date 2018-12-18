@@ -14,8 +14,7 @@ public class UserControl : MonoBehaviour {
     private bool m_fire;
     private float m_deltaX;
 
-
-
+   [SerializeField] private Manager m_GameManager;
     private Character m_character;
 
     private void Start()
@@ -42,7 +41,15 @@ public class UserControl : MonoBehaviour {
 
         m_character.Move(m_turn, m_forward, m_jump, m_pick);
 
-        m_character.AimFire(m_aimDown, m_aimHold, m_fire, m_deltaX);
+        if(m_GameManager.PlayerArrows <= 0)
+        {
+            Debug.Log("No arrows!!!!");
+        }
+        else
+        {
+            m_character.AimFire(m_aimDown, m_aimHold, m_fire, m_deltaX);
+        }
+        
     }
 
    
