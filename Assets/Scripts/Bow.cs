@@ -22,5 +22,6 @@ public class Bow : MonoBehaviour {
     private void Fire()
     {
         Instantiate(m_arrow, m_arrowReference.position, m_arrowReference.rotation);
+       // Destroy(this.m_arrow, 10);
     }
 }
