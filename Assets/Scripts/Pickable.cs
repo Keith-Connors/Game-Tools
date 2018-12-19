@@ -35,7 +35,7 @@ public class Pickable : MonoBehaviour {
         if (picked)
         {
             Debug.Log("You have collected some more arrows!");
-            gameManager.PlayerArrows += Random.Range(2, 5);
+            gameManager.PlayerArrows = gameManager.PlayerArrows + Random.Range(1, 5);
         }
     }
 }

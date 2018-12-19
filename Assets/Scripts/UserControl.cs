@@ -43,13 +43,13 @@ public class UserControl : MonoBehaviour {
 
         if(m_GameManager.PlayerArrows <= 0)
         {
-            Debug.Log("No arrows!!!!");
+            m_GameManager.ArrowsEmpty.SetActive(true);
         }
         else
         {
+            m_GameManager.ArrowsEmpty.SetActive(false);
             m_character.AimFire(m_aimDown, m_aimHold, m_fire, m_deltaX);
         }
-        
     }
 
    

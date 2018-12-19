@@ -10,12 +10,17 @@ public class Manager : MonoBehaviour
     [SerializeField] private int MaxArrows = 10;
     [SerializeField] public int Kills;
 
+    [Header("Arrow UI Information")]
+    public GameObject ArrowsFull;
+    public GameObject ArrowsEmpty;
+
+
     private void Update()
     {
         if (PlayerArrows > MaxArrows)
         {
             PlayerArrows = MaxArrows;
-            Debug.Log("You can't hold any more arrows in your quiver!");
+            ArrowsFull.SetActive(true);
         }
     }
 
@@ -26,7 +31,7 @@ public class Manager : MonoBehaviour
 
     private void CheckHealth()
     {
-        if (m_PlayerHealth <= 0)
+        if (m_PlayerHealth <= 0.0f)
         {
             GameOver();
         }
